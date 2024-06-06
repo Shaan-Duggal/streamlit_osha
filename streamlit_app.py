@@ -62,7 +62,7 @@ def main():
 
     with st.expander("See explanation"):
         st.write(
-            "This new web application, powered by Streamlit, machine learning, and artificial intelligence is here to help keep construction sites safer. With the OSHA Workplace Safety Analysis, anyone from construction managers to safety officers to employees can upload photos of their sites. The web application uses a large language model (LLM) to check these photos against OSHA guidelines and highlights any safety red flags. \
+            "This new web application, powered by Streamlit, machine learning, and artificial intelligence is here to help keep construction sites safer. With the OSHA Workplace Safety Analysis, anyone from construction managers to safety officers to employees can upload photos of their sites. The web application uses a large language model (LLM) to check these photos against OSHA guidelines and highlights any safety red flags. \  
             The code for this is available at this [Github](https://github.com/Shaan-Duggal/streamlit_osha) repository."
         )
 
