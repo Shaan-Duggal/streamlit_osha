@@ -5,18 +5,18 @@ from PIL import Image
 import base64
 from io import BytesIO
 
-# Set up OpenAI API key
+# Set up OpenAI API key from Streamlit's secrets management
 openai_api_key = st.secrets["openai_api_key"]
 client = OpenAI(api_key=openai_api_key)
 
-# --- Page Config ---
+# Configure the page's appearance and settings
 st.set_page_config(
     page_title = "Construction Analyzer",
     page_icon = "🔎",
     menu_items = None
 )
 
-# Function to convert image file to base64
+# Function to convert an image file to base64 format for inline display
 def get_image_base64(image_raw):
     buffered = BytesIO()
     image_raw.save(buffered, format=image_raw.format)
@@ -24,12 +24,12 @@ def get_image_base64(image_raw):
 
     return base64.b64encode(img_byte).decode('utf-8')
 
-# Define a function to generate image description using GPT-4
-# The dialog decorator creates a modal/popup for the function
+# Function to generate a detailed description of an image using GPT-4
+# This includes creating a modal dialog to display results
 @st.experimental_dialog("Image Analysis",width="large")
 def generate_image_description(image_path, image):
     with st.spinner('Analyzing...'):
-        # insert image
+        # Display the image in the modal
         st.image(image)
 
         response = client.chat.completions.create(
@@ -53,10 +53,10 @@ def generate_image_description(image_path, image):
             temperature=0.5,
             max_tokens=4096
         )
-        # Stream response from LLM
+        # Stream the generated descriptions to the page
         st.write_stream(response)
 
-# Define the Streamlit app
+# Main function defining the structure of the Streamlit app
 def main():
     st.title("OSHA Workplace Safety Analysis")
 
@@ -65,11 +65,11 @@ def main():
             "The Construction Analyzer app leverages the power of Streamlit and advanced machine learning to enhance workplace safety at construction sites. Users can upload images of construction sites, and the app employs a large language model (LLM) to analyze and compare these images against OSHA (Occupational Safety and Health Administration) guidelines. The app highlights potential safety concerns, providing an invaluable tool for construction managers and safety officers."
         )
 
-    # Display the images
+    # Display predefined images with the option to analyze each
     images = [
-        "https://raw.githubusercontent.com/ninja-skunk/streamlit/main/images/construction-stairs.jpeg",
-        "https://raw.githubusercontent.com/ninja-skunk/streamlit/main/images/construction-electrical.jpeg",
-        "https://raw.githubusercontent.com/ninja-skunk/streamlit/main/images/construction-piping.jpeg"
+        "https://raw.githubusercontent.com/Shaan-Duggal/streamlit_osha/main/images/construction-stairs.jpeg",
+        "https://raw.githubusercontent.com/Shaan-Duggal/streamlit_osha/main/images/construction-electrical.jpeg",
+        "https://raw.githubusercontent.com/Shaan-Duggal/streamlit_osha/main/images/construction-piping.jpeg"
     ]
 
     cols = st.columns(len(images))
@@ -85,7 +85,7 @@ def main():
             description = generate_image_description(image_url, image_url)
    
     st.divider()
-    #Allow user to upload their image
+    # Allow users to upload their own image for analysis
     uploaded_file = st.file_uploader("Choose an Image")
     if uploaded_file is not None:
         img_type = uploaded_file.type
@@ -97,3 +97,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
