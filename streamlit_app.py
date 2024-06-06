@@ -62,7 +62,7 @@ def main():
 
     with st.expander("See explanation"):
         st.write(
-            "The Construction Analyzer app leverages the power of Streamlit and advanced machine learning to enhance workplace safety at construction sites. Users can upload images of construction sites, and the app employs a large language model (LLM) to analyze and compare these images against OSHA (Occupational Safety and Health Administration) guidelines. The app highlights potential safety concerns, providing an invaluable tool for construction managers and safety officers."
+            "Our new web application, which is powered by Streamlit, machine learning, and artificial intelligence is here to help keep construction sites safer. With the OSHA Workplace Safety Analysis, anyone from construction managers to safety officers to employees can upload photos of their sites. The web application uses a large language model (LLM) to check these photos against OSHA guidelines and highlights any safety red flags."
         )
 
     # Display predefined images with the option to analyze each
