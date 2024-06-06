@@ -1,6 +1,6 @@
 ## Introducing the Construction Safety Assistant
 
-Our new web application, which is powered by Streamlit, machine learning, and artificial intelligence is here to help keep construction sites safer. With the OSHA Workplace Safety Analysis, anyone from construction managers to safety officers to employees can upload photos of their sites. The web application uses a large language model (LLM) to check these photos against OSHA guidelines and highlights any safety red flags.
+This new web application, powered by Streamlit, machine learning, and artificial intelligence is here to help keep construction sites safer. With the OSHA Workplace Safety Analysis, anyone from construction managers to safety officers to employees can upload photos of their sites. The web application uses a large language model (LLM) to check these photos against OSHA guidelines and highlights any safety red flags.
 
 ### The Need for Safety
 
@@ -8,7 +8,7 @@ Construction sites are busy and risky places. Accidents will happen, and they ma
 
 ### The Old Way
 
-Usually, safety inspections are done the old way, with safety officers walking around, and checking things out. It works, but it's slow and depends a lot on the person doing the checking. Everyone has off days, and some things might get overlooked.
+Usually, safety inspections are done the old way, with safety officers walking around, and checking things out. It works, but it's slow and depends greatly on the person checking. Everyone has off days, and some things might get overlooked.
 
 ### Our Smarter Approach
 
@@ -26,4 +26,4 @@ Our web application, the Construction Safety Assistant, uses a new approach. Her
 - **Visual Highlights:** See exactly where the problems are with visual marks directly on your photos.
 - **Detailed Reports:** Generate reports that outline everything, complete with photos and suggestions for fixing any issues.
 
-This tool is all about making safety checks easier, faster, and more reliable. Say goodbye to piles of paperwork and hello to more peace of our mind on the job site!
+This tool makes safety checks easier, faster, and more reliable. Say goodbye to piles of paperwork and hello to more peace of mind on the job site!
