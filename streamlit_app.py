@@ -26,7 +26,7 @@ def get_image_base64(image_raw):
 
 # Function to generate a detailed description of an image using GPT-4
 # This includes creating a modal dialog to display results
-@st.experimental_dialog("Image Analysis",width="large")
+@st.dialog("Image Analysis",width="large")
 def generate_image_description(image_path, image):
     with st.spinner('Analyzing...'):
         # Display the image in the modal
